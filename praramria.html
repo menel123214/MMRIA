@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oiiieeeee</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        .painel{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(255, 253, 253);
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative; /* Importante para posicionar os botões absolutamente dentro */
+        }
+        #sim{
+            position: absolute;
+            bottom: 30px; /* Posiciona na parte inferior */
+            left: 50px; /* Posiciona à esquerda */
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: none; /* Removi a borda inválida */
+            border-radius: 10px;
+            color: white;
+            cursor: pointer; /* Adiciona um cursor de clique */
+        }
+        #nao{
+            position: absolute;
+            bottom: 30px; /* Posiciona na parte inferior */
+            right: 50px; /* Posiciona à direita */
+            height: 40px;
+            width: 60px;
+            background-color: rgb(23, 21, 21);
+            border: none; /* Removi a borda inválida */
+            border-radius: 10px;
+            color: white;
+            margin-left: 0; /* Remova a margem desnecessária */
+            cursor: pointer; /* Adiciona um cursor de clique */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="painel">
+        <h1> Você sabia que... </h1>
+        <img src="https://i.pinimg.com/736x/ed/3b/5a/ed3b5a9ca74cfd6b8590acc95f9a88b6.jpg" alt="">
+        <h2> Eu te amo pra toda a vida </h2>
+        <button id="sim">Sim</button>
+        <button onmouseover="fuja()" id="nao">Não</button>
+    </div>
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao"); // Corrigi o ID para "nao"
+            var larguraJanela = window.innerWidth; // Use innerWidth para a largura correta
+            var alturaJanela = window.innerHeight; // Use innerHeight para a altura correta
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight; // Use offsetHeight para a altura correta
+
+            var aleatorioX = Math.floor(Math.random() * maxX );
+            var aleatorioY = Math.floor(Math.random () * maxY);
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>

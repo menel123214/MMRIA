@@ -1,0 +1,5 @@
+img {
+    max-width: 50%; /* A imagem não será maior que a largura do pai */
+    max-height: 400px; /* A imagem não terá mais de 400 pixels de altura */
+    height: auto;
+  }
